@@ -1,0 +1,50 @@
+
+sudo apt update
+
+# Install necessary libraries
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+
+# Add user to libvirt group
+sudo adduser dj libvirt
+
+# Add user to kvm group
+sudo adduser dj kvm
+
+# To check if virtualization is active or not
+virsh list --all
+
+# Install virtualization manager
+sudo apt install virt-manager
+
+# Run virt-manager
+sudo virt-manager
+
+Reference link https://phoenixnap.com/kb/ubuntu-install-kvm
+
+egrep -c '(vmx|svm)' /proc/cpuinfo
+
+sudo kvm-ok
+
+sudo apt install cpu-checker
+
+sudo apt update
+
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+
+# prbly username is root
+sudo adduser ‘username’ libvirt
+
+sudo adduser ‘[username]’ kvm
+
+virsh list --all
+
+sudo systemctl status libvirtd
+
+sudo systemctl enable --now libvirtd
+
+sudo apt install virt-manager
+
+sudo virt-manager
+
+# incomplete
+virt-install --name=Fedora33 --description='Fedora33' --ram=1536 --vcpus=1 --disk path=/var/lib/libvrt/
