@@ -45,6 +45,3 @@ sudo systemctl enable --now libvirtd
 sudo apt install virt-manager
 
 sudo virt-manager
-
-# incomplete
-virt-install --name=Fedora33 --description='Fedora33' --ram=1536 --vcpus=1 --disk path=/var/lib/libvrt/
